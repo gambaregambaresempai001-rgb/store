@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Capa visual de fondo para dar atmosfera sin afectar accesibilidad -->
+  <div class="ambient-bg" aria-hidden="true"></div>
+
+  <!-- Contenedor principal de la app -->
+  <main class="app-shell">
+    <!-- Encabezado superior de marca + accion global -->
+    <header class="topbar">
+      <div>
+        <p class="brand-kicker">Tienda curada</p>
+        <h1>Atelier Store</h1>
+      </div>
+      <button id="downloadAllBtn" class="ghost-btn">Descargar imagenes</button>
+    </header>
+
+    <!-- Selector de vistas: busqueda y catalogo -->
+    <nav class="view-switch" aria-label="Cambiar vista">
+      <button class="switch-btn active" data-view="search">Buscar</button>
+      <button class="switch-btn" data-view="catalog">Catalogo</button>
+    </nav>
+
+    <!-- Vista 1: busqueda -->
+    <section id="searchView" class="screen active" aria-labelledby="searchTitle">
+      <h2 id="searchTitle">Encuentra algo especial</h2>
+      <label class="search-input-wrap">
+        <span class="visually-hidden">Buscar producto</span>
+        <input id="searchInput" type="search" placeholder="Busca por nombre o descripcion" autocomplete="off" />
+      </label>
+
+      <!-- Chips de sugerencias que autocompletan la busqueda -->
+      <div class="chips" id="suggestionChips"></div>
+
+      <div class="section-head">
+        <h3>Tendencias</h3>
+        <span id="resultsCount"></span>
+      </div>
+      <!-- Resultado filtrado por texto -->
+      <div id="searchResults" class="product-list"></div>
+    </section>
+
+    <!-- Vista 2: catalogo completo -->
+    <section id="catalogView" class="screen" aria-labelledby="catalogTitle">
+      <div class="section-head">
+        <h2 id="catalogTitle">Catalogo esencial</h2>
+        <span id="catalogCount"></span>
+      </div>
+      <!-- Lista completa de productos -->
+      <div id="catalogList" class="product-list"></div>
+    </section>
+
+    <!-- Navegacion inferior estilo app movil -->
+    <footer class="bottom-nav" aria-label="Navegacion inferior">
+      <button class="nav-item active">Inicio</button>
+      <button class="nav-item">Explorar</button>
+      <button id="cartBtn" class="nav-item">Carrito (0)</button>
+    </footer>
+  </main>
+
+  <!-- Modal de detalle de producto -->
+  <div id="productModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal-panel">
+      <button id="closeModalBtn" class="close-btn" aria-label="Cerrar detalle">x</button>
+      <img id="modalImage" src="" alt="" />
+      <div class="modal-content">
+        <p id="modalTag" class="modal-tag"></p>
+        <h3 id="modalName"></h3>
+        <p id="modalPrice" class="modal-price"></p>
+        <p id="modalDescription" class="modal-description"></p>
+      </div>
+      <div class="modal-actions">
+        <button id="addToCartBtn" class="primary-btn">Anadir al carrito</button>
+        <button id="downloadImageBtn" class="ghost-btn">Descargar imagen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logica completa de la tienda -->
+  <script src="script.js"></script>
+</body>
+</html>
