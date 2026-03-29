@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cuadro jhwjkwe</title>
+    <style>
+    .cuadro {
+       width: 1000px;
+       height: 500px;
+       background: linear-gradient(135deg, #877795, #655374);
+       color: white;
+       position: absolute;
+       top: 50%;
+       left:50%;
+       transform: translate(-50%, -50%);
+       border-radius: 10px;
+       backdrop-filter: blur(10px);
+       flex-direction: column;
+       display: flex;
+       justify-content: space-between;
+       align-items: flex-start;
+       padding: 40px;
+    }
+           .cuadroInterno {
+            font-family:  Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+            width: 600px;
+            height: 490px;
+            background: linear-gradient(135deg, #2a272c, #140d1a);
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+             transition: 0.3s
+            }
+           #stats {
+             font-size: 20px;
+             }
+           #textoJuego {
+            font-size: 40px;
+            font-weight: bold;
+}
+.animar-texto {
+  animation: aparecerTexto 0.5s ease;
+}
+
+@keyframes aparecerTexto {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    h1 {
+      color: rgba(255, 255, 255, 0.841); 
+      font-size: 80px;
+      font-size: 96px;
+      margin: 40px 0 0 30px;
+      color: #f5eefc;
+      text-shadow:
+      0 2px 0 rgba(255,255,255,0.15),
+      0 8px 20px rgba(39, 23, 54, 0.35);
+    }
+    button {
+      font-size: 40px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-style: oblique;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #523f5e, #514361);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #74588c, #4e2e6a);      
+      }
+     p {
+  color: white;
+  font-size: 18px;
+}
+    </style>
+    </head>
+      <body>
+        <div class="cuadro">
+        <h1>Tienda</h1>
+        <button onclick="iniciarJuego()">Jugar:3</button>
+                <div class="cuadroInterno">
+          <p id="textoJuego">Bievenido^^</p>
+          <div id="opciones"></div>
+          <h2 id="stats"></h2>
+    </div>
+        </div>
+  <script src="hola.js"> </script>
+</body>
+</html>
